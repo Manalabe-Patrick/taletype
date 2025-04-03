@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+  <g transform="rotate(-60, 21, 21)">
+    <polygon points="21,4 18,10 24,10" fill="#CCD1D9"/> <!-- Sword Tip -->
+    <path d="M19 8L23 8L24 24L18 24Z" fill="#CCD1D9"/>
+    <path d="M20.5 10L21.5 10L21.5 22L20.5 22Z" fill="#AAB2BC"/>
+    <path d="M17 24L25 24L25 26L17 26Z" fill="#ED5564"/>
+    <path d="M19 26L23 26L23 30L19 30Z" fill="#FFCE54"/>
+    <circle cx="21" cy="32" r="2" fill="#F6BB42"/>
+  </g>
+</svg> 
