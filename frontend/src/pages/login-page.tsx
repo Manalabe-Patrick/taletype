@@ -123,10 +123,7 @@ const LoginPage = () => {
       </div>
 
       {/* Right Side - Image/Pattern */}
-      <AuthImagePattern
-        title={"Welcome!"}
-        subtitle={"Sign in to continue your epic journey."}
-      />
+      <AuthImagePattern />
     </div>
   );
 };

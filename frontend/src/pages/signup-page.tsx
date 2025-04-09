@@ -164,10 +164,7 @@ const SignUpPage = () => {
 
       {/* right side */}
 
-      <AuthImagePattern
-        title="Register NPC"
-        subtitle="Start your journey here."
-      />
+      <AuthImagePattern />
     </div>
   );
 };

@@ -1,9 +1,4 @@
-interface AuthIamgeProps {
-  title: string;
-  subtitle: string;
-}
-
-const AuthImagePattern: React.FC<AuthIamgeProps> = ({ title, subtitle }) => {
+const AuthImagePattern = () => {
   return (
     <div className="hidden lg:flex items-center justify-center bg-base-200 p-12">
       <div className="max-w-md text-center">
