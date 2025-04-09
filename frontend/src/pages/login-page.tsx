@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Eye, EyeOff, Loader2, Lock, Mail } from "lucide-react";
 import { useAuthStore } from "../store/use-auth-store";
 import { UserFormData } from "./signup-page";
+import AuthImagePattern from "../components/auth-image-pattern";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -18,7 +19,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="h-screen grid lg:grid-cols-1">
+    <div className="h-screen grid lg:grid-cols-2">
       {/* Left Side - Form */}
       <div className="flex flex-col justify-center items-center p-6 sm:p-12">
         <div className="w-full max-w-md space-y-8">
@@ -122,10 +123,10 @@ const LoginPage = () => {
       </div>
 
       {/* Right Side - Image/Pattern */}
-      {/* <AuthImagePattern
+      <AuthImagePattern
         title={"Welcome!"}
         subtitle={"Sign in to continue your epic journey."}
-      /> */}
+      />
     </div>
   );
 };
