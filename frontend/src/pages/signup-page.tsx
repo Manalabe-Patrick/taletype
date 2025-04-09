@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import toast from "react-hot-toast";
 import { useAuthStore } from "../store/use-auth-store";
+import AuthImagePattern from "../components/auth-image-pattern";
 
 export type UserFormData = {
   fullName?: string;
@@ -42,7 +43,7 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-1">
+    <div className="min-h-screen grid lg:grid-cols-2">
       {/* left side */}
       <div className="flex flex-col justify-center items-center p-6 sm:p-12">
         <div className="w-full max-w-md space-y-8">
@@ -163,10 +164,10 @@ const SignUpPage = () => {
 
       {/* right side */}
 
-      {/* <AuthImagePattern
+      <AuthImagePattern
         title="Register NPC"
         subtitle="Start your journey here."
-      /> */}
+      />
     </div>
   );
 };
