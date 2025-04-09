@@ -38,7 +38,7 @@ export const useChatStore = create<ChatStore>((set, get) => ({
       const res = await axiosInstance.get("/messages/users");
       set({ users: res.data });
     } catch (error) {
-      handleApiError(error, "Signup failed. Please try again.");
+      handleApiError(error);
     } finally {
       set({ isUsersLoading: false });
     }
@@ -50,7 +50,7 @@ export const useChatStore = create<ChatStore>((set, get) => ({
       const res = await axiosInstance.get(`/messages/${userId}`);
       set({ messages: res.data });
     } catch (error) {
-      handleApiError(error, "Signup failed. Please try again.");
+      handleApiError(error);
     } finally {
       set({ isMessagesLoading: false });
     }
@@ -64,7 +64,7 @@ export const useChatStore = create<ChatStore>((set, get) => ({
       );
       set({ messages: [...messages, res.data] });
     } catch (error) {
-      handleApiError(error, "Signup failed. Please try again.");
+      handleApiError(error);
     }
   },
 

@@ -80,9 +80,9 @@ const ChatContainer = () => {
                   {formatMessageTime(message.createdAt)}
                 </time>
               </div>
-              <div className="chat-bubble flex flex-col">
+              <div className="chat-bubble bg-primary flex flex-col">
                 {message.text && (
-                  <p>
+                  <p className="text-black/80">
                     {isLast ? (
                       <TypingText text={message.text} speed={80} />
                     ) : (

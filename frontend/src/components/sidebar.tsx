@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { Users } from "lucide-react";
+import { Trees } from "lucide-react";
 import { useAuthStore } from "../store/use-auth-store";
 import SidebarSkeleton from "./skeletons/sidebar-skeleton";
 import { useChatStore } from "../store/use-chat-store";
@@ -34,8 +34,8 @@ const Sidebar = () => {
     <aside className="h-full w-20 lg:w-72 mr-2 flex flex-col transition-all duration-200 rounded-[12px] bg-base-100/50 shadow-md">
       <div className="border-b border-base-300 w-full p-5">
         <div className="flex items-center gap-2">
-          <Users className="size-6" />
-          <span className="font-medium hidden lg:block">Contacts</span>
+          <Trees className="size-6" />
+          <span className="font-medium hidden lg:block">The forest</span>
         </div>
         {/* TODO: Online filter toggle */}
         <div className="mt-3 hidden lg:flex items-center gap-2">
@@ -54,14 +54,14 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <div className="overflow-y-auto w-full py-3">
+      <div className="overflow-y-auto w-full py-3 px-3">
         {filteredUsers.map((user: User) => (
           <button
             key={user._id}
             onClick={() => setSelectedUser(user)}
             className={`
-              w-full p-3 flex items-center gap-3
-              hover:bg-base-300 transition-colors
+              w-full rounded-lg p-3 flex items-center gap-3
+              hover:bg-base-300/50 transition-colors
               ${
                 selectedUser?._id === user._id
                   ? "bg-base-300 ring-1 ring-base-300"
@@ -73,7 +73,7 @@ const Sidebar = () => {
               <img
                 src={user.profilePic || "/avatar.png"}
                 alt={user.fullName}
-                className="size-12 object-cover rounded-full "
+                className="size-10 object-cover rounded-full "
               />
               {onlineUsers.includes(user._id) && (
                 <span
@@ -86,7 +86,7 @@ const Sidebar = () => {
             {/* User info - only visible on larger screens */}
             <div className="hidden lg:block text-left min-w-0">
               <div className="font-medium truncate">{user.fullName}</div>
-              <div className="text-sm text-zinc-400">
+              <div className="text-xs text-zinc-400">
                 {onlineUsers.includes(user._id) ? "Online" : "Offline"}
               </div>
             </div>

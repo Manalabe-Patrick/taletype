@@ -26,28 +26,49 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <Link
-              to={"/settings"}
-              className={`
-              btn btn-sm gap-2 transition-colors
-              
-              `}
-            >
-              <Settings className="w-4 h-4" />
-              <span className="hidden sm:inline">Settings</span>
-            </Link>
-
             {authUser && (
               <>
-                <Link to={"/profile"} className={`btn btn-sm gap-2`}>
-                  <User className="size-5" />
-                  <span className="hidden sm:inline">Profile</span>
-                </Link>
-
-                <button className="flex gap-2 items-center" onClick={logout}>
-                  <LogOut className="size-5" />
-                  <span className="hidden sm:inline">Logout</span>
-                </button>
+                <div className="dropdown">
+                  <div tabIndex={0} role="button" className="btn m-1">
+                    <img
+                      src={authUser?.profilePic || "/avatar.png"}
+                      alt={authUser?.fullName}
+                      className="size-8 object-cover rounded-full "
+                    />
+                  </div>
+                  <ul
+                    className={` menu dropdown-content rounded-box z-1 w-52 p-2 shadow-sm ml-[-150px] bg-base-100`}
+                  >
+                    <li>
+                      <Link
+                        to={"/settings"}
+                        className={`bg-base-100 hover:bg-base-200 gap-2 transition-colors
+              `}
+                      >
+                        <Settings className="w-4 h-4" />
+                        <span className="hidden sm:inline">Themes</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to={"/profile"}
+                        className={`bg-base-100 hover:bg-base-200 gap-2`}
+                      >
+                        <User className="size-5" />
+                        <span className="hidden sm:inline">Profile</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <button
+                        className="flex gap-2 items-center bg-base-100 hover:bg-base-200"
+                        onClick={logout}
+                      >
+                        <LogOut className="size-5" />
+                        <span className="hidden sm:inline">Logout</span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
               </>
             )}
           </div>

@@ -65,7 +65,7 @@ export const useAuthStore = create<AuthStore>((set, get) => ({
       toast.success("Account created successfully");
       get().connectSocket();
     } catch (error) {
-      handleApiError(error, "Signup failed. Please try again.");
+      handleApiError(error);
     } finally {
       set({ isSigningUp: false });
     }
@@ -80,7 +80,7 @@ export const useAuthStore = create<AuthStore>((set, get) => ({
 
       get().connectSocket();
     } catch (error) {
-      handleApiError(error, "Signup failed. Please try again.");
+      handleApiError(error);
     } finally {
       set({ isLoggingIn: false });
     }
@@ -93,7 +93,7 @@ export const useAuthStore = create<AuthStore>((set, get) => ({
       toast.success("Logged out successfully");
       get().disconnectSocket();
     } catch (error) {
-      handleApiError(error, "Signup failed. Please try again.");
+      handleApiError(error);
     }
   },
 
@@ -104,7 +104,7 @@ export const useAuthStore = create<AuthStore>((set, get) => ({
       set({ authUser: res.data });
       toast.success("Profile updated successfully");
     } catch (error) {
-      handleApiError(error, "Signup failed. Please try again.");
+      handleApiError(error);
     } finally {
       set({ isUpdatingProfile: false });
     }
