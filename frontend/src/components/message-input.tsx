@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Image, Send, X } from "lucide-react";
+import { Send, X } from "lucide-react";
 import { useChatStore } from "../store/use-chat-store";
 
 const MessageInput = () => {
@@ -85,14 +85,14 @@ const MessageInput = () => {
             // onChange={handleImageChange}
           />
 
-          <button
+          {/* <button
             type="button"
             className={`hidden sm:flex btn btn-circle
                      ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
             // onClick={() => fileInputRef.current?.click()}
           >
             <Image size={20} />
-          </button>
+          </button> */}
         </div>
         <button
           type="submit"
