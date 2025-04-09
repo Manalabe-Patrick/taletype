@@ -34,7 +34,15 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={authUser ? <HomePage /> : <Navigate to="/login" />}
+          element={
+            authUser && authUser.profilePic.length <= 0 ? (
+              <ChooseCharacter />
+            ) : authUser ? (
+              <HomePage />
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
         />
         <Route
           path="/signup"

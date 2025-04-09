@@ -18,7 +18,7 @@ type AuthStore = {
   logout: () => void;
   login: (data: UserFormData) => void;
   signup: (data: UserFormData) => void;
-  updateProfile: (data: UserFormData) => void;
+  updateProfile: (data: User) => void;
   onlineUsers: string[];
 };
 
@@ -97,11 +97,12 @@ export const useAuthStore = create<AuthStore>((set, get) => ({
     }
   },
 
-  updateProfile: async (data: UserFormData) => {
+  updateProfile: async (data: User) => {
     set({ isUpdatingProfile: true });
     try {
       const res = await axiosInstance.put("/auth/update-profile", data);
-      set({ authUser: res.data });
+      data.profilePic = res.data;
+      set({ authUser: data });
       toast.success("Profile updated successfully");
     } catch (error) {
       handleApiError(error);
