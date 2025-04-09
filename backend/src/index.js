@@ -28,7 +28,8 @@ app.use(
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-app.use("/public", express.static(path.join(__dirname, "public")));
+// Serve static files from the "src/public" folder under the "/public" route
+app.use("/public", express.static(path.join(__dirname, "src", "public")));
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));

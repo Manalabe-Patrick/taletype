@@ -5,8 +5,6 @@ import ChatHeader from "./chat-header";
 import MessageSkeleton from "./skeletons/message-skeleton";
 import MessageInput from "./message-input";
 import { formatMessageTime } from "../lib/utils";
-import TypingText from "./typing-text";
-
 const ChatContainer = () => {
   const {
     messages,
@@ -53,8 +51,7 @@ const ChatContainer = () => {
       <ChatHeader />
 
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
-        {messages.map((message, i) => {
-          const isLast: boolean = i === messages.length - 1;
+        {messages.map((message) => {
           return (
             <div
               key={message._id}
@@ -82,13 +79,7 @@ const ChatContainer = () => {
               </div>
               <div className="chat-bubble bg-primary flex flex-col">
                 {message.text && (
-                  <p className="text-black/80">
-                    {isLast ? (
-                      <TypingText text={message.text} speed={80} />
-                    ) : (
-                      message.text
-                    )}
-                  </p>
+                  <p className="text-black/80">{message.text}</p>
                 )}
               </div>
             </div>
