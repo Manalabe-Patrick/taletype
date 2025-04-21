@@ -1,5 +1,6 @@
 # 🗨️ TaleType  
 **RPG-style realtime chat application**
+[TaleType Preview](https://taletype.onrender.com/)
 
 ### 📦 Prerequisites
 
